@@ -22,13 +22,14 @@ app.use(express.urlencoded({ limit: "10mb", extended: true })); // Use Express's
 
 // mongoose connection
 mongoose
-  .connect("mongodb+srv://vikrantchauhancf2021:OSHT62ec2XkLTbKl@docuville.obwio.mongodb.net/?retryWrites=true&w=majority&appName=DocuVille")
+  .connect(
+    "mongodb+srv://vikrantchauhancf2021:OSHT62ec2XkLTbKl@docuville.obwio.mongodb.net/?retryWrites=true&w=majority&appName=DocuVille"
+  )
   .then(() => console.log("MongoDB connected directly"))
   .catch((err) => console.log("Failed to connect to MongoDB", err));
 
-
 // Route
-console.log("here before")
+console.log("here before");
 const userRoutes = require("./routes/userRoute"); // No need for .js extension
 const docRoutes = require("./routes/docRoute"); // No need for .js extension
 console.log("here after");
