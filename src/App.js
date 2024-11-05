@@ -22,7 +22,7 @@ function App() {
       setIsAuthenticated(true);
 
       // Fetch user role
-      axios.get("http://localhost:5000/api/users/role", {
+      axios.get("https://docu-ville-backend.vercel.app/api/users/role", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(response => {
@@ -42,7 +42,7 @@ function App() {
     sessionStorage.setItem("token", token); 
     setIsAuthenticated(true);
     // Fetch the user role again upon login
-    axios.get("http://localhost:5000/api/users/role", {
+    axios.get("https://docu-ville-backend.vercel.app/api/users/role", {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then(response => {

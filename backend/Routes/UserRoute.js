@@ -1,11 +1,13 @@
 const express = require('express');
+console.log("Attempting to load userConetroller from ../controllers/userController");
 const {
   registerUser,
   loginUser,
-  userInfo,
   deleteUserInfo,
   getUserRole
 } = require('../controllers/userController');
+console.log("After Attempting to load userController from ../controllers/userController");
+
 const router = express.Router();
 const { body } = require('express-validator');
 const { isAuth } = require("../middleware/is-Auth");

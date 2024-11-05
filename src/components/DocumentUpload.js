@@ -17,7 +17,7 @@ const DocumentUpload = () => {
     if (token) {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/doc/user-document",
+          "https://docu-ville-backend.vercel.app/api/doc/user-document",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -136,7 +136,7 @@ const DocumentUpload = () => {
         };
         const token = sessionStorage.getItem("token");
         const response = await axios.post(
-          "http://localhost:5000/api/doc/extract-text",
+          "https://docu-ville-backend.vercel.app/api/doc/extract-text",
           data,
           {
             headers: { Authorization: token ? `Bearer ${token}` : undefined },
@@ -164,7 +164,7 @@ const DocumentUpload = () => {
     const token = sessionStorage.getItem("token");
     if (token) {
       try {
-        await axios.delete("http://localhost:5000/api/doc/user-document", {
+        await axios.delete("https://docu-ville-backend.vercel.app/api/doc/user-document", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUserDocument(null);

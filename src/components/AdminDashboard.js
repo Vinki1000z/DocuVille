@@ -15,7 +15,7 @@ const AdminDashboard = () => {
     const token = sessionStorage.getItem("token");
 
     axios
-      .get("http://localhost:5000/api/doc/documents", {
+      .get("https://docu-ville-backend.vercel.app/api/doc/documents", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setDocuments(response.data))
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
 
     axios
       .put(
-        `http://localhost:5000/api/doc/documents/${id}/verify`,
+        `https://docu-ville-backend.vercel.app/api/doc/documents/${id}/verify`,
         { status, comments, verificationErrors },
         { headers: { Authorization: `Bearer ${token}` } }
       )
